@@ -52,12 +52,10 @@ int main() {
     char str[SIZE], key[SIZE];
 
     printf("Enter the key: ");
-    fgets(key, SIZE, stdin);
-    key[strcspn(key, "\n")] = '\0';
-
+    scanf("%[^\n]s",str);
+    
     printf("Enter the plain text: ");
-    fgets(str, SIZE, stdin);
-    str[strcspn(str, "\n")] = '\0';
+    scanf("%[^\n]s",key);
 
     encryptByPlayfairCipher(str, key);
     printf("Cipher text: %s\n", str);
