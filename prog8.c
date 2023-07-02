@@ -1,20 +1,16 @@
 #include<stdio.h>
 
-long int power(int a,int b,int mod){
-    long long int t;
-    if(b==1){
-        return a;
-    } 
-    t=power(a,b/2,mod);
-    if(b%2==0){
-        return((t*t)%mod);
+int power(int a, int b, int n)
+{
+    long long int x = 1, y = a;
+    while (b > 0)
+    {
+        if (b % 2 == 1)
+            x = (x * y) % n;
+        y = (y * y) % n;
+        b = b / 2;
     }
-    else{
-        return(((t*t)%mod)*a)%mod;
-    }
-}
-long long int calculatekey(int a,int x,int n){
-    return power(a,x,n);
+    return x % n;
 }
 
 int main(){
