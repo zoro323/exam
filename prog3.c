@@ -83,7 +83,7 @@ b[i][j] = b[i][j]*q - p*b[k][j];
 }
 for(i = 0; i < z; i++)
 for(j = 0; j < z; j++)
-b[i][j] = b[i][j] / c[i][i];
+b[i][j] = b[i][j] / c[i][j];
 printf("\n\nInverse Matrix is:\n");
 for(i = 0; i < z; i++) {
 for(j = 0; j < z; j++)
